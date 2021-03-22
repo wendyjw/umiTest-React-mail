@@ -16,13 +16,10 @@ const BasicLayout: React.FC<BasicLayoutProps> =(props) => {
                 type: 'user/fetchCurrent'
             })
         }
-
     }, [])
-    console.log('---props', props);
     
     return (
         <div className={style.main}>
-            <div>Basic layout </div>
             <article>{children}</article>
             <footer>
                 <BottomNav pathname={location.pathname} />

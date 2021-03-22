@@ -5,14 +5,21 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    // { path: '/login', component: '@/pages/login/index' },
     { 
       path: '/', 
       component: '@/pages/layouts/basicLayout',
       routes:[
-        { path: '/cart', component: '@/pages/cart/index' },
-        { path: '/list', component: '@/pages/olist/index' },
-        { path: '/user', component: '@/pages/user/index' },
+        { path: '/login', component: '@/pages/login/index' },
+        {
+          path: '/',
+          component: '@/pages/layouts/securityLayout',
+          routes: [
+            { path: '/', component: '@/pages/home/index' },
+            { path: '/cart', component: '@/pages/cart/index' },
+            { path: '/list', component: '@/pages/olist/index' },
+            { path: '/user', component: '@/pages/user/index' },
+          ]
+        }
       ]
   },
   ],
