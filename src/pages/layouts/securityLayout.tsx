@@ -20,13 +20,11 @@ const SecurityLayout: React.FC<SecurityLayoutProps> = (props) => {
         const from = location.pathname
         return <Redirect to={{ pathname: pathname, state: { from: from } }} />
     } else {
-
-    }
-    return (
-        <div>
-            路由守卫
-            <article>{children}</article>
-        </div>
-    )
+        return (
+            <div>
+                <article>{children}</article>
+            </div>
+        )
+    } 
 }
 export default connect(({ user }: ConnectState) => ({ user }))(SecurityLayout)
